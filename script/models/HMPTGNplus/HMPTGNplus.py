@@ -32,7 +32,6 @@ class HMPTGNplus(BaseModel):
         self.cat = True
         self.c_max = args.max_curvature
         self.c_min = args.min_curvature
-        self.hmpdca_type = args.hmpdca_type
         self.spatial_module = HMPGNNplus(self.manifold, args.nhid, args.nout, args.spatial_order)
         self.temporal_module = HMPTemporal(self.manifold, args.nout, self.device, args.hmp_casual_conv_depth,
                                                     args.hmp_casual_conv_kernel_size, args.hmpdca_type, use_bias = args.bias, nonlinear='softmax')

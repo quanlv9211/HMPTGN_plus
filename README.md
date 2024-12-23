@@ -23,9 +23,7 @@ The data is cached in `./data/input/cached`.
 
 3.1 To run HMPTGN:
 
-```!python run_hmptgnplus.py  --model=HMPTGNplus --dataset=enron10 --lr=0.02 \
-	--seed=998877 --max_curvature=5 --min_curvature=0.1 --spatial_order=2 \
-	--hmp_casual_conv_depth=2 --hmp_casual_conv_kernel_size=2```
+```!python run_hmptgnplus.py  --model=HMPTGNplus --dataset=enron10 --lr=0.02 --seed=998877 --max_curvature=5 --min_curvature=0.1 --spatial_order=2 --hmp_casual_conv_depth=2 --hmp_casual_conv_kernel_size=2```
 
 3.2 Seed: 998877, 23456, 900.
 

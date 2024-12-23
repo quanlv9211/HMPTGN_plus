@@ -21,7 +21,7 @@ The data is cached in `./data/input/cached`.
 
 ```cd ./script```
 
-3.1 To run HMPTGN:
+3.1 To run HMPTGN+:
 
 ```!python run_hmptgnplus.py  --model=HMPTGNplus --dataset=enron10 --lr=0.02 --seed=998877 --max_curvature=5 --min_curvature=0.1 --spatial_order=2 --hmp_casual_conv_depth=2 --hmp_casual_conv_kernel_size=2```
 
@@ -37,3 +37,4 @@ For the baselines, please follow these repos and papers:
 - [EvolveGCN](https://github.com/IBM/EvolveGCN)
 - [DySAT](https://github.com/FeiGSSS/DySAT_pytorch)
 - [DHGAT](https://doi.org/10.1016/j.neucom.2023.127038)
+- [HMPTGN](https://github.com/quanlv9211/HMPTGN)

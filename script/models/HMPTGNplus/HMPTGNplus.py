@@ -34,7 +34,7 @@ class HMPTGNplus(BaseModel):
         self.c_min = args.min_curvature
         self.spatial_module = HMPGNNplus(self.manifold, args.nhid, args.nout, args.spatial_order)
         self.temporal_module = HMPTemporal(self.manifold, args.nout, self.device, args.hmp_casual_conv_depth,
-                                                    args.hmp_casual_conv_kernel_size, args.hmpdca_type, use_bias = args.bias, nonlinear='softmax')
+                                                    args.hmp_casual_conv_kernel_size, use_bias = args.bias, nonlinear='softmax')
         self.recurrent_module = HypMPGRU(args)
 
     def reset_parameters(self):

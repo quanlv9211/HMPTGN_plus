@@ -319,7 +319,7 @@ class HMPDCA_Dist(nn.Module):
 
 
 class HMPResidualLayer(nn.Module):
-    def __init__(self, res_dim, skip_dim, manifold, device, kernel_size, nonlinear, dilation_step=1, use_bias=True, agg_type="distance"):
+    def __init__(self, res_dim, skip_dim, manifold, device, kernel_size, nonlinear, dilation_step=1, use_bias=True):
         super(HMPResidualLayer, self).__init__()
         self.res_dim = res_dim
         self.skip_dim = skip_dim
@@ -370,7 +370,7 @@ class HMPResidualLayer(nn.Module):
 
 
 class HMPTemporal(nn.Module):
-    def __init__(self, manifold, out_dim, device, dilation_depth, kernel_size, agg_type, use_bias=True, nonlinear='softmax'):
+    def __init__(self, manifold, out_dim, device, dilation_depth, kernel_size, use_bias=True, nonlinear='softmax'):
         super(HMPTemporal, self).__init__()
         self.manifold = manifold
         self.device = device
@@ -382,7 +382,7 @@ class HMPTemporal(nn.Module):
         self.use_bias = use_bias
         self.dilated_stack = nn.ModuleList(
             [HMPResidualLayer(self.residual_size, self.skip_size, self.manifold, self.device, self.casual_agg_kernel_size,
-                            nonlinear, self.casual_agg_kernel_size ** layer, self.use_bias, agg_type)
+                            nonlinear, self.casual_agg_kernel_size ** layer, self.use_bias)
              for layer in range(self.casual_agg_depth)])
 
 
